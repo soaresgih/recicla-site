@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Recicla+ | Entrar</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark">♻️</span>
+      <span class="brand-name">Recicla+</span>
+      <span class="brand-tag">Sorocaba • Reciclagem & Recompensas</span>
+    </div>
+    <nav aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="quem-somos.html">Quem Somos</a>
+      <a href="como-funciona.html">Como Funciona</a>
+      <a href="beneficios.html">Benefícios</a>
+      <a href="ecopontos.html">Ecopontos</a>
+      <a href="login.html" class="active btn-mini">Entrar</a>
+    </nav>
+    <button id="menu-toggle" aria-label="Abrir menu">☰</button>
+  </header>
+
+  <main class="container page">
+    <section class="login-card reveal">
+      <h1>Acesse sua conta</h1>
+      <p class="muted">Acompanhe seu saldo de créditos e histórico de descartes.</p>
+
+      <form class="login-form" onsubmit="alert('Login de demonstração'); return false;">
+        <label>
+          Telefone ou e-mail
+          <input type="text" placeholder="(15) 9 9999-9999 ou voce@email">
+        </label>
+        <label>
+          Senha
+          <input type="password" placeholder="••••••••">
+        </label>
+        <button class="btn" type="submit">Entrar</button>
+        <button class="btn btn-outline" type="button">Criar conta</button>
+      </form>
+    </section>
+  </main>
+
+  <footer><p>Recicla+ © 2025</p></footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

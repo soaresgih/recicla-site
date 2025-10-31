@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Recicla+ | Benefícios</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark">♻️</span>
+      <span class="brand-name">Recicla+</span>
+      <span class="brand-tag">Sorocaba • Reciclagem & Recompensas</span>
+    </div>
+
+    <nav aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="quem-somos.html">Quem Somos</a>
+      <a href="como-funciona.html">Como Funciona</a>
+      <a href="beneficios.html" class="active">Benefícios</a>
+      <a href="ecopontos.html">Ecopontos</a>
+      <a href="login.html" class="btn-mini">Entrar</a>
+    </nav>
+
+    <button id="menu-toggle" aria-label="Abrir menu">☰</button>
+  </header>
+
+  <main class="container page page-bene">
+    <!-- hero -->
+    <section class="bene-hero">
+      <div class="bene-hero-text">
+        <h1>Benefícios</h1>
+        <p>No Recicla+, suas entregas viram <strong>créditos</strong> para descontar em compras nos mercados parceiros. Quanto mais você recicla, mais vantagem acumula — e a cidade agradece.</p>
+        <div class="hero-cta">
+          <a href="como-funciona.html" class="btn">Como funciona</a>
+          <a href="ecopontos.html" class="btn btn-outline">Ver ecopontos</a>
+        </div>
+      </div>
+      <div class="bene-hero-art" aria-hidden="true">
+        <img src="pessoareciclando.jpeg" alt="">
+      </div>
+    </section>
+
+    <!-- ganhos -->
+    <section class="bene-cards">
+      <article class="card reveal">
+        <div class="icon">💳</div>
+        <h3>Ganhe créditos</h3>
+        <p>Ao registrar um descarte, seu saldo aumenta automaticamente: <strong>peso_kg × valor_kg × 0,40</strong>.</p>
+      </article>
+      <article class="card reveal">
+        <div class="icon">🛒</div>
+        <h3>Use no caixa</h3>
+        <p>Na compra, os <strong>créditos usados</strong> são abatidos do saldo (você escolhe quanto quer utilizar).</p>
+      </article>
+      <article class="card reveal">
+        <div class="icon">🌍</div>
+        <h3>Impacto real</h3>
+        <p>Menos resíduos em aterros, mais reaproveitamento e educação ambiental para toda a comunidade.</p>
+      </article>
+    </section>
+
+    <!-- tabela de materiais) -->
+    <section class="bene-table reveal">
+      <h2>Materiais e valor base por kg (exemplo)</h2>
+      <p class="note">Valores ilustrativos para o simulador abaixo. Parceiros/Prefeitura podem adotar outras faixas.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Material</th>
+              <th>Classe</th>
+              <th>Valor base (R$/kg)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Papel</td><td>Seco</td><td data-vkg="1.20">1,20</td></tr>
+            <tr><td>Plástico</td><td>Seco</td><td data-vkg="2.00">2,00</td></tr>
+            <tr><td>Vidro</td><td>Seco</td><td data-vkg="0.60">0,60</td></tr>
+            <tr><td>Metal</td><td>Seco</td><td data-vkg="3.50">3,50</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- simulador -->
+    <section class="bene-sim reveal">
+      <h2>Simule seus créditos</h2>
+      <form id="sim-form" class="sim-grid" onsubmit="return false;">
+        <label>
+          Material
+          <select id="sim-material" required>
+            <option value="papel" data-vkg="1.20">Papel — R$ 1,20/kg</option>
+            <option value="plastico" data-vkg="2.00">Plástico — R$ 2,00/kg</option>
+            <option value="vidro" data-vkg="0.60">Vidro — R$ 0,60/kg</option>
+            <option value="metal" data-vkg="3.50">Metal — R$ 3,50/kg</option>
+          </select>
+        </label>
+
+        <label>
+          Peso (kg)
+          <input id="sim-peso" type="number" step="0.01" min="0" placeholder="Ex.: 10" required>
+        </label>
+
+        <label>
+          Fator de crédito
+          <input id="sim-fator" type="number" step="0.01" min="0" max="1" value="0.40">
+          <small>padrão: 0,40 (40%)</small>
+        </label>
+
+        <button class="btn" id="sim-calcular">Calcular</button>
+
+        <div class="sim-out">
+          <div><span class="kicker">Crédito estimado</span><strong id="sim-credito">R$ 0,00</strong></div>
+          <div class="muted">Fórmula: <code>peso_kg × valor_kg × fator</code></div>
+        </div>
+      </form>
+
+      <div class="sim-exempos">
+        <div class="example-card">
+          <strong>Exemplo 1</strong>
+          <p><em>Ana</em> descartou <b>10 kg</b> de <b>plástico</b> (R$ 2,00/kg). Crédito: <b>10 × 2,00 × 0,40 = R$ 8,00</b>.</p>
+        </div>
+        <div class="example-card">
+          <strong>Exemplo 2</strong>
+          <p><em>Bruno</em> tinha <b>R$ 15,50</b> e usou <b>R$ 5,00</b> numa compra. Novo saldo: <b>R$ 10,50</b>.</p>
+        </div>
+      </div>
+    </section>
+    <section class="cta-hero reveal">
+      <div>
+        <div class="kicker">Pronto pra começar?</div>
+        <h3>Faça seu login e acompanhe seu saldo</h3>
+        <p class="muted">Veja seus descartes, saldo de créditos e histórico de compras.</p>
+      </div>
+      <a href="login.html" class="btn">Entrar</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Recicla+ © 2025</p>
+  </footer>
+
+  <script>
+    // simulador creditos
+    (function(){
+      const fmt = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+      const elMat = document.getElementById('sim-material');
+      const elPeso = document.getElementById('sim-peso');
+      const elFator = document.getElementById('sim-fator');
+      const elOut = document.getElementById('sim-credito');
+      const btn = document.getElementById('sim-calcular');
+
+      function calcular(){
+        const vkg = parseFloat(elMat.selectedOptions[0].dataset.vkg || '0');
+        const peso = parseFloat(elPeso.value || '0');
+        const fator = parseFloat(elFator.value || '0.4');
+        const credito = Math.max(0, peso * vkg * fator);
+        elOut.textContent = fmt(credito);
+      }
+
+      btn?.addEventListener('click', calcular);
+    })();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
